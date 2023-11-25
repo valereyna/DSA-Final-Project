@@ -103,7 +103,21 @@ class MovieDatabase {
         //Does a search via region specified from the user
         void searchByRegion(const string& searchTerm) {
             searchHistory.push(searchTerm);
-            searchByRegionRecursive(root, searchTerm);
+
+            if (searchTerm == "Asia"){
+                cout << "Searching for Asia\n\n";
+                
+                //Include specific searches for countries in Asia
+                searchByRegionRecursive(root, "Indonesia");
+                searchByRegionRecursive(root, "Korea");
+                searchByRegionRecursive(root, "China");
+                searchByRegionRecursive(root, "Thailand");
+                searchByRegionRecursive(root, "Japan");
+            }
+            else {
+                searchByRegionRecursive(root, searchTerm);
+            }
+            
         }
         //Prints out details of the movie, ranging from title, genre, ratings, and region
         void displayMovieDetails(const Movie& movie) {
