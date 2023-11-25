@@ -236,6 +236,45 @@ int main() {
         Movie("Hope Frozen", "Drama", 6.6, "Thailand"),
         Movie("Sang Krasue", "Horror", 6.4, "Thailand"),
         Movie("Once Upon a Star", "Drama", 7.0, "Thailand"),
+        //Drama
+        Movie("A Man Called Otto", "Drama", 7.5, "America"),
+        Movie("Miracle in Cell No. 7", "Drama", 8.1, "Korea"),
+        Movie("Marriage Story", "Drama", 7.9, "America"), 
+        Movie("Enola Holmes", "Drama", 6.6, "Europe"), 
+        //Fantasy
+        Movie("One Piece", "Fantasy", 8.4, "Japan"),
+        Movie("Over the Moon ", "Fantasy", 6.3, "China"),
+        Movie("Nightbooks", "Fantasy", 5.8, "America"),
+        Movie("Lara Croft: Tomb Raider", "Fantasy", 5.7, "America"),
+        Movie("The Craft: Legacy", "Fantasy", 4.5, "America"),
+        Movie("Slumberland", "Fantasy", 6.7, "America"),
+        Movie("White Snake 2: Green Snake", "Fantasy", 6.8, "China"),
+        Movie("Matilda", "Fantasy", 7.0, "America"),
+        Movie("Seventh Son", "Fantasy", 5.5, "America"),
+        Movie("The Sea Beast", "Fantasy", 7.0, "America"),
+        Movie("Tales from Earthsea", "Fantasy", 6.3, "Japan"),
+        Movie("Wish Dragon", "Fantasy", 7.2, "America"),
+        Movie("The Old Guard", "Fantasy", 6.7, "America"),
+        //Horror
+        Movie("Chilling Adventures of Sabrina", "Horror", 7.4, "America"),
+        Movie("Qorin", "Horror", 4.9, "Indonesia"),
+        Movie("Parasyte: The Maxim", "Horror", 8.3, "Japan"),
+        Movie("Satan's Slaves", "Horror", 6.5, "Indonesia"),
+        Movie("A Classic Horror Story", "Horror", 5.7, "Europe"),
+        //Musical
+        Movie("Blackpink: Light Up the Sky", "Musical", 7.3, "Korea"),
+        Movie("Dear Evan Hansen", "Musical", 6.1, "America"),
+        Movie("Coboy Junior: The Movie", "Musical", 3.6, "Indonesia"),
+        Movie("One Direction: This Is Us", "Musical", 4.2, "Europe"),
+        Movie("Whitney Houston: I Wanna Dance with Somebody", "Musical", 6.6, "America"),
+        //Romance
+        Movie("All the Bright Places", "Romance", 6.6, "America"),
+        Movie("The Age of Adaline", "Romance", 7.2, "America"),
+        Movie("Dilan 1990", "Romance", 7.0, "Indonesia"),
+        Movie("The Kissing Booth", "Romance", 5.9, "America"),
+        Movie("Two Blue Stripes", "Romance", 7.8, "Indonesia"),
+        Movie("Monte Carlo", "Romance", 5.8, "America"),
+
 
     };
 
