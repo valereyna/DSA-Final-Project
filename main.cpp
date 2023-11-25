@@ -224,6 +224,18 @@ int main() {
         Movie("Incantation", "Horror", 6.2, "China"),
         Movie("A Quiet Place Part II", "Horror", 7.2, "America"),
         Movie("The Silence", "Horror", 5.3, "America"),
+        Movie("5 cm", "Drama", 7.2, "Indonesia"),
+        Movie("Check the Store Next Door: The Next Chapter", "Drama", 7.9, "Indonesia"),
+        Movie("Check the Store Next Door 2", "Drama", 7.6, "Indonesia"),
+        Movie("Three Days to Eternity", "Drama", 7.0, "Indonesia"),
+        Movie("Nevertheless,", "Romance", 7.1, "Korea"),
+        Movie("20th Century Girl", "Romance", 7.3, "Korea"),
+        Movie("Love Destiny: The Movie", "Romance", 6.2, "Thailand"),
+        Movie("Ghost Lab", "Horror", 5.2, "Thailand"),
+        Movie("Happy Old Year", "Romance", 7.2, "Thailand"),
+        Movie("Hope Frozen", "Drama", 6.6, "Thailand"),
+        Movie("Sang Krasue", "Horror", 6.4, "Thailand"),
+        Movie("Once Upon a Star", "Drama", 7.0, "Thailand"),
 
     };
 
