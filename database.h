@@ -16,7 +16,7 @@ class MovieDatabase {
     private:
         TreeNode* root;
         queue<string> searchHistory;
-
+        
         void addToTree(TreeNode*& node, const Movie& movie) {
             if (node == nullptr) {
                 node = new TreeNode(movie);
@@ -59,7 +59,7 @@ class MovieDatabase {
                 searchByGenreRecursive(node->right, searchTerm);
             }
         }
-
+        
         void searchByRegionRecursive(TreeNode* node, const string& searchTerm) {
             if (node != nullptr) {
                 if (node->data.region.find(searchTerm) != string::npos) {
@@ -76,17 +76,17 @@ class MovieDatabase {
         void addMovie(const Movie& movie) {
             addToTree(root, movie);
         }
-
+        //Has a certain movie being printed out through title via input from user
         void searchByTitle(const string& searchTerm) {
             searchHistory.push(searchTerm);
             searchByTitleRecursive(root, searchTerm);
         }
-
+        //Has movies being searched via rating
         void searchByRating(int minRating) {
             vector<Movie> matchingMovies;
             searchHistory.push(to_string(minRating));
             searchByRatingRecursive(root, minRating, matchingMovies);
-
+            //Sorting system for the movies as it gets printed
             sort(matchingMovies.begin(), matchingMovies.end(), [](const Movie& a, const Movie& b) {
                 return a.rating > b.rating;
             });
@@ -95,22 +95,22 @@ class MovieDatabase {
                 displayMovieDetails(movie);
             }
         }
-
+        //Does a search via genre specified from the user
         void searchByGenre(const string& searchTerm) {
             searchHistory.push(searchTerm);
             searchByGenreRecursive(root, searchTerm);
         }
-
+        //Does a search via region specified from the user
         void searchByRegion(const string& searchTerm) {
             searchHistory.push(searchTerm);
             searchByRegionRecursive(root, searchTerm);
         }
-
+        //Prints out details of the movie, ranging from title, genre, ratings, and region
         void displayMovieDetails(const Movie& movie) {
             cout << "Title: " << movie.title << "\nGenre: " << movie.genre
                     << "\nRating: " << movie.rating << "\nRegion: " << movie.region << "\n\n";
         }
-
+        //Shows the search history done by the user
         void displaySearchHistory(){
             cout << "\nSearch History:\n";\
             queue<string> tempQueue = searchHistory;

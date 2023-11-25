@@ -61,6 +61,7 @@ repeater:
         movieDB.searchByTitle(searchTerm);
     }
     else if (InputValue == 2) {
+        //Prompts user to search via rating
         int minRating;
         cout << "Enter minimum rating: ";
         cin >> minRating;
@@ -72,7 +73,7 @@ repeater:
 
         cout << "Enter your input: ";
         cin >> genrenum;
-
+        //Prompts user to enter an input number to search via genre type
         if (genrenum >= 1 && genrenum <= 15) {
             vector<string> genres = {
                 "Action", "Anime", "Comedy", "Children & Family", "Crime", "Drama", "Fantasy", "Horror",
@@ -87,6 +88,7 @@ repeater:
     }
     else if (InputValue == 4) {
         // Movie index via Region - Asia (1) Europe (2) USA (3) Indonesia (4) Korea (5) China (6) Thailand (7) Japan (8)
+        //Prompts user to enter an input to search via region
         cout << "Movie index via Region - \nAsia (1) \nEurope (2) \nUSA (3)\nIndonesia (4) \nKorea (5) \nChina (6) \nThailand (7)\nJapan (8)\n\n";
         cout << "Enter your input for the search: ";
         cin >> regionnum;
@@ -108,7 +110,7 @@ repeater:
         else {
         cout << "Invalid search term. Please enter 'title', 'rating', 'genre', or 'region'.\n";
     }
-
+//Prompt for users to search again frm the beginning
     string RepeatInput;
     cout << "Would you like to go back to the main menu? (yes/no): ";
     cin >> RepeatInput;
