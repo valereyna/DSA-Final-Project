@@ -8,6 +8,7 @@
 using namespace std;
 
 class Movie {
+//Movie search categories.
 public:
     string title;
     string genre;
