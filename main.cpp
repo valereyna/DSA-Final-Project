@@ -225,8 +225,6 @@ int main() {
         Movie("A Quiet Place Part II", "Horror", 7.2, "America"),
         Movie("The Silence", "Horror", 5.3, "America"),
 
-
-        // Add more movies here...
     };
 
     // Loop to add movies
