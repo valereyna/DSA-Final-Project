@@ -15,7 +15,7 @@ int main() {
 
     // List of movies to add
     vector<Movie> moviesToAdd = {
-        Movie("Jurassic World", "Action", 6.9, "America"),
+        Movie("Jurassic World", "Action", 6.9, ""),
         Movie("Train to Busan", "Action", 7.6, "Korea"),
         Movie("Uncharted", "Action", 6.3, "America"),
         Movie("Demon Slayer", "Anime", 8.6, "Japan"),
@@ -28,72 +28,6 @@ int main() {
         Movie("Police Story", "Classics", 7.5, "China"),
         Movie("Cigarette Girl", "Romance", 8.3, "Indonesia"),
         Movie("Pride and Prejudice", "Drama", 7.8, "Europe"),
-        Movie("Mr. & Mrs. Smith", "Action/Comedy", 6.5, "Region"),
-        Movie("John Wick", "Action/Thriller", 7.4, "Region"),
-        Movie("Bullet Train", "Action/Thriller", 7.3, "Region"),
-        Movie("47 Ronin", "Action/Fantasy", 6.2, "Region"),
-        Movie("Snow White and the Huntsman", "Action/Fantasy", 6.1, "Region"),
-        Movie("The School for Good and Evil", "Fantasy", 5.9, "Region"),
-        Movie("Assassin’s Creed", "Action/Adventure", 5.6, "Region"),
-        Movie("Snake Eyes", "Action/Adventure", 5.4, "Region"),
-        Movie("Transformers: The Last Knight", "Action/Sci-Fi", 5.2, "Region"),
-        Movie("Teenage Mutant Ninja Turtles: Out of the Shadows", "Action/Adventure", 5.9, "Region"),
-        Movie("Power Rangers", "Action/Adventure", 5.9, "Region"),
-        Movie("Stand by Me Doraemon", "Animation", 7.3, "Japan")
-        Movie("Stand by Me Doraemon 2", "Animation", 7.5, "Japan")
-        Movie("A Silent Voice", "Anime", 8.1, "Japan")
-        Movie("A Whisker Away", "Anime", 6.7, "Japan")
-        Movie("Howl's Moving Castle", "Animation", 8.2, "Japan")
-        Movie("Spirited Away", "Animation", 8.6, "Japan")
-        Movie("Ponyo", "Animation", 7.6, "Japan")
-        Movie("When Marnie Was There", "Animation", 7.6, "Japan")
-        Movie("Oshi No Ko", "Anime", 8.5, "Japan")
-        Movie("Sailor Moon Eternal", "Anime", 7.0, "Japan")
-        Movie("200 Pounds Beauty", "Drama", 6.7, "South Korea")
-        Movie("SpongeBob SquarePants", "Animation", 8.2, "United States")
-        Movie("The SpongeBob Movie: Sponge on the Run", "Animation", 5.9, "United States")
-        Movie("Kung Fu Panda 3", "Animation", 7.1, "United States")
-        Movie("Kung Fu Panda: The Dragon Knight", "Animation", 6.0, "United States")
-        Movie("Madagascar", "Animation", 6.9, "United States")
-        Movie("Shrek", "Animation", 7.9, "United States")
-        Movie("Shrek 2", "Animation", 7.3, "United States")
-        Movie("Shrek the Third", "Animation", 6.1, "United States")
-        Movie("Hotel Transylvania", "Animation", 7.0, "United States")
-        Movie("Hotel Transylvania 2", "Animation", 6.6, "United States")
-        Movie("Hotel Transylvania 3: Summer Vacation", "Animation", 6.3, "United States")
-        Movie("The Secret Life of Pets", "Animation", 6.5, "United States")
-        Movie("The Smurfs", "Animation", 6.5, "United States")
-        Movie("Smurfs: The Lost Village", "Animation", 6.0, "United States")
-        Movie("Sherina’s Adventure", "Family", 7.8, "Indonesia")
-        Movie("Hachi: A Dog's Tale", "Drama", 8.1, "United States")
-        Movie("Barbie: Princess Charm School", "Animation", 6.6, "United States")
-        Movie("Barbie: Life in the Dreamhouse", "Animation", 7.5, "United States")
-        Movie("Barbie: A Touch of Magic", "Animation", 7.0, "United States")
-        Movie("Barbie in a Mermaid Tale", "Animation", 6.3, "United States")
-        Movie("Barbie Spy Squad", "Animation", 5.5, "United States")
-        Movie("Barbie Princess Adventure", "Animation", 5.5, "United States")
-        Movie("The Adventures of Sharkboy and Lavagirl 3-D", "Family", 3.7, "United States")
-        Movie("Spy Kids", "Family", 5.6, "United States")
-        Movie("Miraculous: Ladybug & Cat Noir, the Movie", "Animation", 6.1, "France")
-        Movie("The Swan Princess", "Animation", 6.4, "United States")
-        Movie("How to Train Your Dragon 2", "Animation", 7.8, "United States")
-        Movie("The Lorax", "Animation", 6.4, "United States")
-        Movie("The Boss Baby: Back in Business", "Animation", 6.5, "United States")
-        Movie("Ice Cold: Murder, Coffee and Jessica Wongso", "Crime", 6.0, "Indonesia")
-        Movie("Money Heist", "Crime", 8.2, "Spain")
-        Movie("Stealing Raden Saleh", "Drama", 7.3, "Indonesia")
-        Movie("Dahmer - Monster: The Jeffrey Dahmer Story", "Crime", 7.9, "United States")
-        Movie("Knives Out", "Mystery", 7.9, "United States")
-        Movie("Glass Onion", "Mystery", 7.1, "United States")
-        Movie("Ocean's Eleven", "Crime", 7.7, "United States")
-        Movie("Inside Man", "Crime", 7.6, "United States")
-        Movie("The Bank Job", "Crime", 7.2, "United Kingdom")
-        Movie("Public Enemies", "Crime", 7.0, "United States")
-        Movie("The Dark Knight", "Action", 9.0, "United States")
-        Movie("Batman Begins", "Action", 8.2, "United States")
-        Movie("Sherlock Holmes", "Mystery", 7.6, "United States")
-        Movie("American Gangster", "Crime", 7.8, "United States")
-        Movie("Man on Fire", "Action", 7.7, "United States")
         // Add more movies here...
     };
 
