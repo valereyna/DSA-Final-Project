@@ -5,14 +5,16 @@
 #include <string>
 #include <vector>
 
+using namespace std;
+
 class Movie {
 public:
-    std::string title;
-    std::string genre;
+    string title;
+    string genre;
     double rating;
-    std::string region;
+    string region;
 
-    Movie(const std::string& t, const std::string& g, double r, const std::string& reg)
+    Movie(const string& t, const string& g, double r, const string& reg)
         : title(t), genre(g), rating(r), region(reg) {}
 };
 
