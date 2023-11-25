@@ -28,17 +28,17 @@ int main() {
         Movie("Police Story", "Classics", 7.5, "China"),
         Movie("Cigarette Girl", "Romance", 8.3, "Indonesia"),
         Movie("Pride and Prejudice", "Drama", 7.8, "Europe"),
-        Movie("Mr. & Mrs. Smith", "Action/Comedy", 6.5, "Region"),
-        Movie("John Wick", "Action/Thriller", 7.4, "Region"),
-        Movie("Bullet Train", "Action/Thriller", 7.3, "Region"),
-        Movie("47 Ronin", "Action/Fantasy", 6.2, "Region"),
-        Movie("Snow White and the Huntsman", "Action/Fantasy", 6.1, "Region"),
-        Movie("The School for Good and Evil", "Fantasy", 5.9, "Region"),
-        Movie("Assassin’s Creed", "Action/Adventure", 5.6, "Region"),
-        Movie("Snake Eyes", "Action/Adventure", 5.4, "Region"),
-        Movie("Transformers: The Last Knight", "Action/Sci-Fi", 5.2, "Region"),
-        Movie("Teenage Mutant Ninja Turtles: Out of the Shadows", "Action/Adventure", 5.9, "Region"),
-        Movie("Power Rangers", "Action/Adventure", 5.9, "Region"),
+        Movie("Mr. & Mrs. Smith", "Action/Comedy", 6.5, "United States"),
+        Movie("John Wick", "Action/Thriller", 7.4, "United States"),
+        Movie("Bullet Train", "Action/Thriller", 7.3, "United States"),
+        Movie("47 Ronin", "Action/Fantasy", 6.2, "United States"),
+        Movie("Snow White and the Huntsman", "Action/Fantasy", 6.1, "United States"),
+        Movie("The School for Good and Evil", "Fantasy", 5.9, "United States"),
+        Movie("Assassin’s Creed", "Action/Adventure", 5.6, "United States"),
+        Movie("Snake Eyes", "Action/Adventure", 5.4, "United States"),
+        Movie("Transformers: The Last Knight", "Action/Sci-Fi", 5.2, "United States"),
+        Movie("Teenage Mutant Ninja Turtles: Out of the Shadows", "Action/Adventure", 5.9, "United States"),
+        Movie("Power Rangers", "Action/Adventure", 5.9, "United States"),
         Movie("Stand by Me Doraemon", "Animation", 7.3, "Japan"),
         Movie("Stand by Me Doraemon 2", "Animation", 7.5, "Japan"),
         Movie("A Silent Voice", "Anime", 8.1, "Japan"),
@@ -274,8 +274,6 @@ int main() {
         Movie("The Kissing Booth", "Romance", 5.9, "America"),
         Movie("Two Blue Stripes", "Romance", 7.8, "Indonesia"),
         Movie("Monte Carlo", "Romance", 5.8, "America"),
-
-
     };
 
     // Loop to add movies
