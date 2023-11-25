@@ -15,9 +15,9 @@ int main() {
 
     // List of movies to add
     vector<Movie> moviesToAdd = {
-        Movie("Jurassic World", "Action", 6.9, "USA"),
+        Movie("Jurassic World", "Action", 6.9, "America"),
         Movie("Train to Busan", "Action", 7.6, "Korea"),
-        Movie("Uncharted", "Action", 6.3, "USA"),
+        Movie("Uncharted", "Action", 6.3, "America"),
         Movie("Demon Slayer", "Anime", 8.6, "Japan"),
         Movie("Attack on Titan", "Anime", 9.0, "Japan"),
         Movie("Spy x Family", "Anime", 8.4, "Japan"),
@@ -42,14 +42,14 @@ repeater:
 
     cout << endl;
     cout << "============================================================\n";
-    cout << "====================WEFLIX SEARCH ENGINE====================\n";
+    cout << "=================== WEFLIX SEARCH ENGINE ===================\n";
     cout << "|                     1. Title                             |\n";
     cout << "|                     2. Rating                            |\n";
     cout << "|                     3. Genre                             |\n";
     cout << "|                     4. Region                            |\n";
     cout << "|                     5. Search History                    |\n";
     cout << "============================================================\n\n";
-    cout << "Enter search term by entering a corresponding number:";
+    cout << "Enter search term by entering a corresponding number: ";
     string searchTerm;
     int InputValue;
     cin >> InputValue;
@@ -69,9 +69,26 @@ repeater:
     }
     else if (InputValue == 3) {
         // Action, anime, comedy, Children & Family, crime, drama, fantasy, horror, musical, romance, sci-fi, sports, teen, thriller, classic
-        cout << "Enter genre via a corresponding number: \nAction (1)\nAnime (2)\nComedy (3)\nChildren & Family (4)\nCrime (5)\nDrama (6)\nFantasy (7)\nHorror (8)\nMusical (9)\nRomance (10)\nSci-fi(11)\nSports (12)\nTeen (13)\nThriller (14)\nClassic (15)\n\n";
-
-        cout << "Enter your input: ";
+        cout << endl;
+        cout << "============================================================\n";
+        cout << "======================= Movie by Genre =====================\n";
+        cout << "|                     1. Action                            |\n";
+        cout << "|                     2. Anime                             |\n";
+        cout << "|                     3. Comedy                            |\n";
+        cout << "|                     4. Children & Family                 |\n";
+        cout << "|                     5. Crime                             |\n";
+        cout << "|                     6. Drama                             |\n";
+        cout << "|                     7. Fantasy                           |\n";
+        cout << "|                     8. Horror                            |\n";
+        cout << "|                     9. Musical                           |\n";
+        cout << "|                     10. Romance                          |\n";
+        cout << "|                     11. Sci-Fi                           |\n";
+        cout << "|                     12. Sports                           |\n";
+        cout << "|                     13. Teen                             |\n";
+        cout << "|                     14. Thriller                         |\n";
+        cout << "|                     15. Classics                         |\n";
+        cout << "============================================================\n\n";
+        cout << "Enter genre via a corresponding number: ";
         cin >> genrenum;
         //Prompts user to enter an input number to search via genre type
         if (genrenum >= 1 && genrenum <= 15) {
@@ -89,8 +106,19 @@ repeater:
     else if (InputValue == 4) {
         // Movie index via Region - Asia (1) Europe (2) USA (3) Indonesia (4) Korea (5) China (6) Thailand (7) Japan (8)
         //Prompts user to enter an input to search via region
-        cout << "Movie index via Region - \nAsia (1) \nEurope (2) \nUSA (3)\nIndonesia (4) \nKorea (5) \nChina (6) \nThailand (7)\nJapan (8)\n\n";
-        cout << "Enter your input for the search: ";
+        cout << endl;
+        cout << "============================================================\n";
+        cout << "====================== Movie by Region =====================\n";
+        cout << "|                     1. Asia                              |\n";
+        cout << "|                     2. Europe                            |\n";
+        cout << "|                     3. America                           |\n";
+        cout << "|                     4. Indonesia                         |\n";
+        cout << "|                     5. Korea                             |\n";
+        cout << "|                     6. China                             |\n";
+        cout << "|                     7. Thailand                          |\n";
+        cout << "|                     8. Japan                             |\n";
+        cout << "============================================================\n\n";
+        cout << "Enter movie by region via a corresponding number: ";
         cin >> regionnum;
 
         if (regionnum >= 1 && regionnum <= 8) {
