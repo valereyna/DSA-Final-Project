@@ -9,6 +9,8 @@
 #include <algorithm>
 #include <queue>
 #include <iomanip>
+#include <sstream>
+#include <fstream>
 
 using namespace std;
 
@@ -27,16 +29,13 @@ class MovieDatabase {
             }
         }
 
-        void searchByTitleRecursive(TreeNode* node, const string& searchTerm) {
+        void searchByTitleRecursive(TreeNode* node, const string& searchTerm, vector<Movie>& matchingMovies) {
             if (node != nullptr) {
                 if (node->data.title.find(searchTerm) != string::npos) {
-                    displayMovieDetails(node->data);
+                    matchingMovies.push_back(node->data);
                 }
-                if (searchTerm < node->data.title) {
-                    searchByTitleRecursive(node->left, searchTerm);
-                } else {
-                    searchByTitleRecursive(node->right, searchTerm);
-                }
+                searchByTitleRecursive(node->left, searchTerm, matchingMovies);
+                searchByTitleRecursive(node->right, searchTerm, matchingMovies);
             }
         }
 
@@ -50,80 +49,149 @@ class MovieDatabase {
             }
         }
 
-        void searchByGenreRecursive(TreeNode* node, const string& searchTerm) {
+        void searchByGenreRecursive(TreeNode* node, const string& searchTerm, vector<Movie>& matchingMovies) {
             if (node != nullptr) {
                 if (node->data.genre.find(searchTerm) != string::npos) {
-                    displayMovieDetails(node->data);
+                    matchingMovies.push_back(node->data);
                 }
-                searchByGenreRecursive(node->left, searchTerm);
-                searchByGenreRecursive(node->right, searchTerm);
+                searchByGenreRecursive(node->left, searchTerm, matchingMovies);
+                searchByGenreRecursive(node->right, searchTerm, matchingMovies);
             }
         }
         
-        void searchByRegionRecursive(TreeNode* node, const string& searchTerm) {
+        void searchByRegionRecursive(TreeNode* node, const string& searchTerm, vector<Movie>& matchingMovies) {
             if (node != nullptr) {
                 if (node->data.region.find(searchTerm) != string::npos) {
-                    displayMovieDetails(node->data);
+                    matchingMovies.push_back(node->data);
                 }
-                searchByRegionRecursive(node->left, searchTerm);
-                searchByRegionRecursive(node->right, searchTerm);
+                searchByRegionRecursive(node->left, searchTerm, matchingMovies);
+                searchByRegionRecursive(node->right, searchTerm, matchingMovies);
             }
         }
 
+        void loadMoviesFromFile(const string& filename){
+            ifstream file(filename);
+            if (!file.is_open()){
+                cerr << "Error: Could not open the file" << filename << endl;
+                return;
+            }
+
+            string line;
+            while (getline(file, line)){
+                Movie movie = Movie::fromString(line);
+                addMovie(movie);
+            }
+
+            file.close();
+        }
+
     public:
-        MovieDatabase() : root(nullptr) {}
+        MovieDatabase() : root(nullptr) {
+            const string filename = "movieslists.txt";
+            loadMoviesFromFile(filename);
+        }
 
         void addMovie(const Movie& movie) {
             addToTree(root, movie);
         }
+
         //Has a certain movie being printed out through title via input from user
         void searchByTitle(const string& searchTerm) {
+
+            vector<Movie> matchingMovies;
             searchHistory.push(searchTerm);
-            searchByTitleRecursive(root, searchTerm);
+            searchByTitleRecursive(root, searchTerm, matchingMovies);
+
+			// Sort by title before displaying
+            sort(matchingMovies.begin(), matchingMovies.end(), [](const Movie& a, const Movie& b) {
+                return a.title < b.title;
+            });
+
+            for (size_t i = 0; i < matchingMovies.size(); ++i) {
+                displayMovieDetails(i + 1, matchingMovies[i]);
+            }
         }
+
         //Has movies being searched via rating
         void searchByRating(int minRating) {
+
             vector<Movie> matchingMovies;
             searchHistory.push(to_string(minRating));
             searchByRatingRecursive(root, minRating, matchingMovies);
+
             //Sorting system for the movies as it gets printed
             sort(matchingMovies.begin(), matchingMovies.end(), [](const Movie& a, const Movie& b) {
                 return a.rating > b.rating;
             });
 
-            for (const auto& movie : matchingMovies) {
-                displayMovieDetails(movie);
+            for (size_t i = 0; i < matchingMovies.size(); ++i) {
+                displayMovieDetails(i + 1, matchingMovies[i]);
             }
         }
+
         //Does a search via genre specified from the user
         void searchByGenre(const string& searchTerm) {
+
+            vector<Movie> matchingMovies;
             searchHistory.push(searchTerm);
-            searchByGenreRecursive(root, searchTerm);
+            searchByGenreRecursive(root, searchTerm, matchingMovies);
+
+            // Sort by title before displaying
+            sort(matchingMovies.begin(), matchingMovies.end(), [](const Movie& a, const Movie& b) {
+                return a.title < b.title;
+            });
+
+            for (size_t i = 0; i < matchingMovies.size(); ++i) {
+                displayMovieDetails(i + 1, matchingMovies[i]);
+            }
         }
+
         //Does a search via region specified from the user
         void searchByRegion(const string& searchTerm) {
+
+            vector<Movie> matchingMovies;
             searchHistory.push(searchTerm);
 
-            if (searchTerm == "Asia"){
-                cout << "Searching for Asia\n\n";
+			    if (searchTerm == "Asia"){
                 
                 //Include specific searches for countries in Asia
-                searchByRegionRecursive(root, "Indonesia");
-                searchByRegionRecursive(root, "Korea");
-                searchByRegionRecursive(root, "China");
-                searchByRegionRecursive(root, "Thailand");
-                searchByRegionRecursive(root, "Japan");
+                searchByRegionRecursive(root, "Indonesia", matchingMovies);
+                searchByRegionRecursive(root, "Korea", matchingMovies);
+                searchByRegionRecursive(root, "China", matchingMovies);
+                searchByRegionRecursive(root, "Thailand", matchingMovies);
+                searchByRegionRecursive(root, "Japan", matchingMovies);
             }
             else {
-                searchByRegionRecursive(root, searchTerm);
+                searchByRegionRecursive(root, searchTerm, matchingMovies);
+            }
+
+			// Sort by title before displaying
+            sort(matchingMovies.begin(), matchingMovies.end(), [](const Movie& a, const Movie& b) {
+                return a.title < b.title;
+            });
+
+			for (size_t i = 0; i < matchingMovies.size(); ++i) {
+                displayMovieDetails(i + 1, matchingMovies[i]);
             }
             
         }
+
         //Prints out details of the movie, ranging from title, genre, ratings, and region
-        void displayMovieDetails(const Movie& movie) {
-            cout << "Title: " << movie.title << "\nGenre: " << movie.genre
-                    << "\nRating: " << movie.rating << "\nRegion: " << movie.region << "\n\n";
+        void displayMovieDetails(int number, const Movie& movie) {
+            if (number <= 9) {
+                cout << number << ". " << "Title : " << movie.title << "\n";
+			    cout << "   Genre :" << movie.genre << "\n";
+                cout << "   Rating: " << movie.rating << "\n";
+			    cout << "   Region:" << movie.region << "\n" << endl;
+            }
+            else {
+                cout << number << ". " << "Title : " << movie.title << "\n";
+			    cout << "    Genre :" << movie.genre << "\n";
+                cout << "    Rating: " << movie.rating << "\n";
+			    cout << "    Region:" << movie.region << "\n" << endl;
+            }
         }
+
         //Shows the search history done by the user
         void displaySearchHistory(){
             cout << "\nSearch History:\n";\
