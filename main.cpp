@@ -16,6 +16,35 @@ int main() {
 
     MovieDatabase movieDB;
 
+    LoginPage:
+        string UserID;
+        string Userpass;
+        cout << "\n";
+        cout << "Enter User ID: ";
+        cin >> UserID;
+        cout << "\nEnter Password: ";
+        cin >> Userpass;
+        cout << endl;
+        
+        if (UserID == "User123") {
+            if (Userpass == "TrialPass"){
+              cout << "Logged in!\n";
+              goto repeater;
+            }
+            else {
+                cout << "--------------------------------\n";
+                cout << "|  Wrong password. Try again.  |\n";
+                cout << "--------------------------------" << endl;
+                goto LoginPage;
+            }
+
+        } else {
+            cout << "--------------------------------\n";
+            cout << "|  Unregistered ID, Try again. |\n";
+            cout << "--------------------------------" << endl;
+            goto LoginPage;
+        }
+
 repeater:
     int genrenum;
     int regionnum;
