@@ -12,7 +12,7 @@
 using namespace std;
 
 class Movie {
-//Movie search categories.
+//Movie search by categories.
 public:
     string title;
     string genre;
