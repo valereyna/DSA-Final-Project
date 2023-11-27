@@ -2,6 +2,7 @@
 #include "tree.h"
 #include "database.h"
 
+//libaries
 #include <iostream>
 #include <string>
 #include <vector>
@@ -16,6 +17,7 @@ int main() {
 
     MovieDatabase movieDB;
 
+    //If the provided credentials match ("User123" and "TrialPass"), it grants access to the system; otherwise, it prompts for re-entry.
     LoginPage:
         string UserID;
         string Userpass;
@@ -182,7 +184,7 @@ repeater:
         cout << "Invalid search term. Please enter 'title', 'rating', 'genre', or 'region'.\n";
     }
 
-    //Prompt for users to search again from the beginning
+    //Prompt for users to search again from the beginning or exit
     string RepeatInput;
     cout << endl;
     cout << "Would you like to go back to the main menu? (Y/N): ";
