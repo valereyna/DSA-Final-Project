@@ -21,13 +21,32 @@ int main() {
     LoginPage:
         string UserID;
         string Userpass;
+
+        cout << "********************************************************************" << endl;
+        cout << "*                                                                  *" << endl;
+        cout << "*                        W E L C O M E   T O                       *" << endl;
+        cout << "*                                                                  *" << endl;
+        cout << "*               _    _  ____  ____  __    ____  _  _               *\n";
+        cout << "*              ( \\/\\/ )( ___)( ___)(  )  (_  _)( \\/ )              *\n";
+        cout << "*               )    (  )__)  )__)  )(__  _)(_  )  (               *\n";
+        cout << "*              (__/\\__)(____)(__)  (____)(____)(_/\\_)              *\n";
+        cout << "*                                                                  *" << endl;
+        cout << "*                                                                  *" << endl;
+        cout << "*             Your Ultimate Entertainment Destination!             *" << endl;
+        cout << "*                                                                  *" << endl;
+        cout << "*           Enjoy a world of movies, TV shows, and more!           *" << endl;
+        cout << "*                Sit back, relax, and let the WEFLIX               *" << endl;
+        cout << "*                         experience begin.                        *" << endl;
+        cout << "*                                                                  *" << endl;
+        cout << "********************************************************************" << endl;
+
         cout << "\n";
         cout << "Enter User ID: ";
         cin >> UserID;
         cout << "\nEnter Password: ";
         cin >> Userpass;
         cout << endl;
-        
+
         if (UserID == "User123") {
             if (Userpass == "TrialPass"){
               cout << "Logged in!\n";
@@ -50,25 +69,6 @@ int main() {
 repeater:
     int genrenum;
     int regionnum;
-
-    cout << "********************************************************************" << endl;
-    cout << "*                                                                  *" << endl;
-    cout << "*                        W E L C O M E   T O                       *" << endl;
-    cout << "*                                                                  *" << endl;
-    cout << "*               _    _  ____  ____  __    ____  _  _               *\n";
-    cout << "*              ( \\/\\/ )( ___)( ___)(  )  (_  _)( \\/ )              *\n";
-    cout << "*               )    (  )__)  )__)  )(__  _)(_  )  (               *\n";
-    cout << "*              (__/\\__)(____)(__)  (____)(____)(_/\\_)              *\n";
-    cout << "*                                                                  *" << endl;
-    cout << "*                                                                  *" << endl;
-    cout << "*             Your Ultimate Entertainment Destination!             *" << endl;
-    cout << "*                                                                  *" << endl;
-    cout << "*           Enjoy a world of movies, TV shows, and more!           *" << endl;
-    cout << "*                Sit back, relax, and let the WEFLIX               *" << endl;
-    cout << "*                         experience begin.                        *" << endl;
-    cout << "*                                                                  *" << endl;
-    cout << "********************************************************************" << endl;
-    cout << "" << endl;
     
     cout << endl;
     cout << "============================================================\n";
