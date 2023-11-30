@@ -2,6 +2,7 @@
 #include "tree.h"
 #include "database.h"
 
+//libaries
 #include <iostream>
 #include <string>
 #include <vector>
@@ -16,16 +17,36 @@ int main() {
 
     MovieDatabase movieDB;
 
+    //If the provided credentials match ("User123" and "TrialPass"), it grants access to the system; otherwise, it prompts for re-entry.
     LoginPage:
         string UserID;
         string Userpass;
+
+        cout << "********************************************************************" << endl;
+        cout << "*                                                                  *" << endl;
+        cout << "*                        W E L C O M E   T O                       *" << endl;
+        cout << "*                                                                  *" << endl;
+        cout << "*               _    _  ____  ____  __    ____  _  _               *\n";
+        cout << "*              ( \\/\\/ )( ___)( ___)(  )  (_  _)( \\/ )              *\n";
+        cout << "*               )    (  )__)  )__)  )(__  _)(_  )  (               *\n";
+        cout << "*              (__/\\__)(____)(__)  (____)(____)(_/\\_)              *\n";
+        cout << "*                                                                  *" << endl;
+        cout << "*                                                                  *" << endl;
+        cout << "*             Your Ultimate Entertainment Destination!             *" << endl;
+        cout << "*                                                                  *" << endl;
+        cout << "*           Enjoy a world of movies, TV shows, and more!           *" << endl;
+        cout << "*                Sit back, relax, and let the WEFLIX               *" << endl;
+        cout << "*                         experience begin.                        *" << endl;
+        cout << "*                                                                  *" << endl;
+        cout << "********************************************************************" << endl;
+
         cout << "\n";
         cout << "Enter User ID: ";
         cin >> UserID;
         cout << "\nEnter Password: ";
         cin >> Userpass;
         cout << endl;
-        
+
         if (UserID == "User123") {
             if (Userpass == "TrialPass"){
               cout << "Logged in!\n";
@@ -48,25 +69,6 @@ int main() {
 repeater:
     int genrenum;
     int regionnum;
-
-    cout << "********************************************************************" << endl;
-    cout << "*                                                                  *" << endl;
-    cout << "*                        W E L C O M E   T O                       *" << endl;
-    cout << "*                                                                  *" << endl;
-    cout << "*               _    _  ____  ____  __    ____  _  _               *\n";
-    cout << "*              ( \\/\\/ )( ___)( ___)(  )  (_  _)( \\/ )              *\n";
-    cout << "*               )    (  )__)  )__)  )(__  _)(_  )  (               *\n";
-    cout << "*              (__/\\__)(____)(__)  (____)(____)(_/\\_)              *\n";
-    cout << "*                                                                  *" << endl;
-    cout << "*                                                                  *" << endl;
-    cout << "*             Your Ultimate Entertainment Destination!             *" << endl;
-    cout << "*                                                                  *" << endl;
-    cout << "*           Enjoy a world of movies, TV shows, and more!           *" << endl;
-    cout << "*                Sit back, relax, and let the WEFLIX               *" << endl;
-    cout << "*                         experience begin.                        *" << endl;
-    cout << "*                                                                  *" << endl;
-    cout << "********************************************************************" << endl;
-    cout << "" << endl;
     
     cout << endl;
     cout << "============================================================\n";
@@ -182,7 +184,7 @@ repeater:
         cout << "Invalid search term. Please enter 'title', 'rating', 'genre', or 'region'.\n";
     }
 
-    //Prompt for users to search again from the beginning
+    //Prompt for users to search again from the beginning or exit
     string RepeatInput;
     cout << endl;
     cout << "Would you like to go back to the main menu? (Y/N): ";

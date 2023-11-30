@@ -18,7 +18,8 @@ class MovieDatabase {
     private:
         TreeNode* root;
         queue<string> searchHistory;
-        
+
+	//Inserts a movie into the binary search tree based on its title
         void addToTree(TreeNode*& node, const Movie& movie) {
             if (node == nullptr) {
                 node = new TreeNode(movie);
@@ -29,6 +30,7 @@ class MovieDatabase {
             }
         }
 
+	//Recursively searches for movies by title and populates a vector with matching movies.
         void searchByTitleRecursive(TreeNode* node, const string& searchTerm, vector<Movie>& matchingMovies) {
             if (node != nullptr) {
                 if (node->data.title.find(searchTerm) != string::npos) {
@@ -39,6 +41,7 @@ class MovieDatabase {
             }
         }
 
+	//Recursively searches for movies by rating and populates a vector with matching movies.
         void searchByRatingRecursive(TreeNode* node, int minRating, vector<Movie>& matchingMovies) {
             if (node != nullptr) {
                 if (node->data.rating >= minRating) {
@@ -49,6 +52,7 @@ class MovieDatabase {
             }
         }
 
+	//Recursively searches for movies by genre and populates a vector with matching movies.
         void searchByGenreRecursive(TreeNode* node, const string& searchTerm, vector<Movie>& matchingMovies) {
             if (node != nullptr) {
                 if (node->data.genre.find(searchTerm) != string::npos) {
@@ -58,7 +62,8 @@ class MovieDatabase {
                 searchByGenreRecursive(node->right, searchTerm, matchingMovies);
             }
         }
-        
+
+	//Recursively searches for movies by region and populates a vector with matching movies.
         void searchByRegionRecursive(TreeNode* node, const string& searchTerm, vector<Movie>& matchingMovies) {
             if (node != nullptr) {
                 if (node->data.region.find(searchTerm) != string::npos) {
@@ -69,6 +74,7 @@ class MovieDatabase {
             }
         }
 
+	//Function to load movies from the database to this file.
         void loadMoviesFromFile(const string& filename){
             ifstream file(filename);
             if (!file.is_open()){
@@ -86,11 +92,13 @@ class MovieDatabase {
         }
 
     public:
+	//load the movies
         MovieDatabase() : root(nullptr) {
             const string filename = "movieslists.txt";
             loadMoviesFromFile(filename);
         }
 
+	//add the movie to the tree
         void addMovie(const Movie& movie) {
             addToTree(root, movie);
         }
@@ -102,7 +110,7 @@ class MovieDatabase {
             searchHistory.push(searchTerm);
             searchByTitleRecursive(root, searchTerm, matchingMovies);
 
-			// Sort by title before displaying
+		// Sort by title before displaying
             sort(matchingMovies.begin(), matchingMovies.end(), [](const Movie& a, const Movie& b) {
                 return a.title < b.title;
             });
