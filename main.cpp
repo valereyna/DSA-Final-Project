@@ -69,6 +69,7 @@ int main() {
 repeater:
     int genrenum;
     int regionnum;
+    string LogOutConfirm;
     
     cout << endl;
     cout << "============================================================\n";
@@ -196,8 +197,19 @@ repeater:
     }
     else {
         cout << endl;
-        cout << "Thank you for using this program!\n";
-
-        return 0;
+        cout << "Would you like to log out? (Y/N): ";
+        cin >> LogOutConfirm;
+        
+        if (LogOutConfirm == "Y") {
+            cout << endl;
+            cout << "Thank you for using this program!\n";
+            
+            return 0;
+        }
+        else {
+            goto repeater;
+        }
     }
+
+    return 0;
 }
